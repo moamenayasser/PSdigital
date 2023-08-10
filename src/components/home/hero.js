@@ -3,19 +3,19 @@ const Intro = () => {
     <>
       <header className="bg-white text-[#001d35] dark:bg-black dark:text-white">
         {/* <header className="bg-gradient-to-r from-[#001d35] to-[#068297]"> */}
-       
+
         <div className="pt-10">
           <div className="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center">
             {/* <!--Left Col--> */}
             <div className="flex flex-col w-full  justify-center items-center text-center p-10 mx-auto  md:w-11/12 xl:w-9/12">
-              <h1 class="mb-8 text-4xl font-extrabold leading-none tracking-normal text-gray-900 md:text-6xl md:tracking-tight">
+              <h1 class="mb-8 text-4xl font-extrabold leading-none tracking-normal text-gray-900 dark:text-white md:text-6xl md:tracking-tight">
                 <span>Start</span>{" "}
                 <span class="block w-full py-2 leading-12  lg:inline">
                   building a buzz
                 </span>{" "}
                 <span>around your product ?</span>
               </h1>
-              <p class="px-0 mb-8 text-lg text-gray-600 md:text-xl lg:px-24">
+              <p class="px-0 mb-8 text-lg text-gray-600 dark:text-white md:text-xl lg:px-24">
                 we specialize in crafting custom digital strategies that drive
                 growth, increase revenue, and enhance brand visibility.
               </p>

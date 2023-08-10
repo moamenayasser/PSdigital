@@ -34,16 +34,16 @@ const Header = () => {
           </button>
         </div>
         <div className="hidden lg:flex lg:gap-x-12">
-          <a href="#" className="font-semibold leading-6 text-[#001d35]">
+          <a href="#" className="font-semibold leading-6 text-[#001d35] dark:text-white">
             Services
           </a>
-          <a href="#" className="font-semibold leading-6 text-[#001d35]">
+          <a href="#" className="font-semibold leading-6 text-[#001d35] dark:text-white">
             Our Work
           </a>
-          <a href="#" className="font-semibold leading-6 text-[#001d35]">
+          <a href="#" className="font-semibold leading-6 text-[#001d35] dark:text-white">
             Success Stories
           </a>
-          <a href="#" className="font-semibold leading-6 text-[#001d35]">
+          <a href="#" className="font-semibold leading-6 text-[#001d35] dark:text-white">
             Contact Us
           </a>
         </div>

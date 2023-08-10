@@ -36,7 +36,7 @@ const OurServices = () => {
 
             <div className="mt-5">
               <ul className="flex flex-wrap">
-                <li className="flex items-center w-full lg:w-1/2 text-lg font-medium tracking-wide text-[#001d35] mb-3">
+                <li className="flex items-center w-full lg:w-1/2 text-lg font-medium tracking-wide text-[#001d35] dark:text-white mb-3">
                   <div className="mr-2 bg-gray-100 p-2 rounded-full">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -57,7 +57,7 @@ const OurServices = () => {
                   </div>
                   Expert UI / UX
                 </li>
-                <li className="flex items-center w-full lg:w-1/2 text-lg font-medium tracking-wide text-[#001d35] mb-3">
+                <li className="flex items-center w-full lg:w-1/2 text-lg font-medium tracking-wide text-[#001d35] dark:text-white mb-3">
                   <div className="mr-2 bg-gray-100 p-2 rounded-full">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -78,7 +78,7 @@ const OurServices = () => {
                   </div>
                   Expert Designers
                 </li>
-                <li className="flex items-center w-full lg:w-1/2 text-lg font-medium tracking-wide text-[#001d35] mb-3">
+                <li className="flex items-center w-full lg:w-1/2 text-lg font-medium tracking-wide text-[#001d35] dark:text-white mb-3">
                   <div className="mr-2 bg-gray-100 p-2 rounded-full">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -99,7 +99,7 @@ const OurServices = () => {
                   </div>
                   Expert Developers
                 </li>
-                <li className="flex items-center w-full lg:w-1/2 text-lg font-medium tracking-wide text-[#001d35] mb-3">
+                <li className="flex items-center w-full lg:w-1/2 text-lg font-medium tracking-wide text-[#001d35] dark:text-white mb-3">
                   <div className="mr-2 bg-gray-100 p-2 rounded-full">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -122,11 +122,7 @@ const OurServices = () => {
                 </li>
               </ul>
             </div>
-            <div className="tp-ab-circle-btn">
-              <Link href="/about" className="tp-btn">
-                Read More
-              </Link>
-            </div>
+           
           </div>
           <div className="w-full lg:w-1/2 relative">
             <img src={img_1} alt="about-img" />

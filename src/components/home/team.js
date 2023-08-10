@@ -7,10 +7,10 @@ const OurTeam = () => {
             Team
           </span>
         </h1>
-        <h5 class="text-[#022441] capitalize relative leading-[2.5] mb-[5px] after:absolute after:content-[''] after:bottom-0 after:w-[36px] after:h-[5px] after:bg-tf after:left-0 after:right-0 after:mx-auto after:text-center ">
+        <h5 class="text-[#022441] dark:text-white capitalize relative leading-[2.5] mb-[5px] after:absolute after:content-[''] after:bottom-0 after:w-[36px] after:h-[5px] after:bg-tf after:left-0 after:right-0 after:mx-auto after:text-center ">
           our Team
         </h5>
-        <h3 class="mb-[28px] text-[#022441] capitalize animate-fade-up  animate-delay-[2s]">
+        <h3 class="mb-[28px] text-[#022441] dark:text-white capitalize animate-fade-up  animate-delay-[2s]">
           latest projects
         </h3>
       </div>
