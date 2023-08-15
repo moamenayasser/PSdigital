@@ -23,7 +23,6 @@ const ThemeProvider = ({ children, defaultTheme }) => {
       document.documentElement.classList.add(newTheme);
     }
   };
-
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
       {children}

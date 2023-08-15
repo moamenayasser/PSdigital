@@ -8,6 +8,12 @@
   --dark: #000;
 }
 
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+}
+
 ::-webkit-scrollbar {
   width: 4px;
   height: 5px;
@@ -103,7 +109,6 @@ body {
   margin: 0;
   /* 1 */
   line-height: inherit;
-  /* 2 */
 }
 
 /*
@@ -1760,6 +1765,7 @@ video {
 
 .animate-\[move_3s_infinite_linear\] {
   animation: move 3s infinite linear;
+  -webkit-animation: move 3s infinite linear;
 }
 
 @keyframes swing {
@@ -4782,6 +4788,10 @@ img {
 .group:hover .group-hover\:before\:delay-0::before {
   content: var(--tw-content);
   transition-delay: 0s;
+}
+
+.marquee-container.ps-bg {
+  position: absolute !important;
 }
 
 :is(.dark .dark\:border-t) {

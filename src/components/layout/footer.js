@@ -1,6 +1,9 @@
 const Footer = () => {
   return (
-    <div className="w-full pt-20 flex items-center justify-center bg-[#001d35]">
+    <div
+      id="contact"
+      className="w-full pt-20 flex items-center justify-center bg-[#001d35]"
+    >
       <div className="md:w-2/3 w-full px-4 text-white flex flex-col">
         <div className="w-full text-4xl sm:text-7xl font-bold">
           <h1 className="w-full md:w-2/3">How can we help you. get in touch</h1>
@@ -16,7 +19,10 @@ const Footer = () => {
             </a> */}
 
             <div className="flex flex-wrap justify-center gap-2">
-              <button className="bg-blue-500 p-2 font-semibold text-white inline-flex items-center space-x-2 rounded-full">
+              <a
+                href=""
+                className="bg-blue-500 p-2 font-semibold text-white inline-flex items-center space-x-2 rounded-full"
+              >
                 <svg
                   className="w-5 h-5 fill-current"
                   role="img"
@@ -25,9 +31,12 @@ const Footer = () => {
                 >
                   <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
                 </svg>
-              </button>
+              </a>
 
-              <button className="bg-gray-700 p-2 font-semibold text-white inline-flex items-center space-x-2 rounded-full">
+              <a
+                href=""
+                className="bg-gray-700 p-2 font-semibold text-white inline-flex items-center space-x-2 rounded-full"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   aria-hidden="true"
@@ -37,16 +46,17 @@ const Footer = () => {
                 >
                   <g fill="none">
                     <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
                       d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385c.6.105.825-.255.825-.57c0-.285-.015-1.23-.015-2.235c-3.015.555-3.795-.735-4.035-1.41c-.135-.345-.72-1.41-1.23-1.695c-.42-.225-1.02-.78-.015-.795c.945-.015 1.62.87 1.845 1.23c1.08 1.815 2.805 1.305 3.495.99c.105-.78.42-1.305.765-1.605c-2.67-.3-5.46-1.335-5.46-5.925c0-1.305.465-2.385 1.23-3.225c-.12-.3-.54-1.53.12-3.18c0 0 1.005-.315 3.3 1.23c.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23c.66 1.65.24 2.88.12 3.18c.765.84 1.23 1.905 1.23 3.225c0 4.605-2.805 5.625-5.475 5.925c.435.375.81 1.095.81 2.22c0 1.605-.015 2.895-.015 3.3c0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"
                       fill="currentColor"
                     />
                   </g>
                 </svg>
-              </button>
+              </a>
 
-              <button className="bg-gradient-to-r from-pink-600 to-orange-700 p-2 font-semibold text-white inline-flex items-center space-x-2 rounded-full">
+              <a
+                href=""
+                className="bg-gradient-to-r from-pink-600 to-orange-700 p-2 font-semibold text-white inline-flex items-center space-x-2 rounded-full"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   version="1.1"
@@ -61,7 +71,6 @@ const Footer = () => {
                       d="M303.8 158.9h-95.5c-27.2 0-49.4 22.1-49.4 49.4v95.5c0 27.2 22.1 49.4 49.4 49.4h95.5c27.2 0 49.4-22.1 49.4-49.4v-95.5c-.1-27.3-22.2-49.4-49.4-49.4zm-47.8 161c-35.2 0-63.9-28.7-63.9-63.9s28.7-63.9 63.9-63.9 63.9 28.7 63.9 63.9-28.7 63.9-63.9 63.9zm67.1-120.7c-6 0-10.8-4.8-10.8-10.8s4.8-10.8 10.8-10.8 10.8 4.8 10.8 10.8-4.8 10.8-10.8 10.8z"
                       fill="#FFFFFF"
                       data-original="#000000"
-                      class=""
                       opacity="1"
                     ></path>
                     <circle
@@ -71,19 +80,41 @@ const Footer = () => {
                       transform="rotate(-89.31 256.026 255.981)"
                       fill="#FFFFFF"
                       data-original="#000000"
-                      class=""
                       opacity="1"
                     ></circle>
                     <path
                       d="M256 31C131.7 31 31 131.7 31 256s100.7 225 225 225 225-100.7 225-225S380.3 31 256 31zm125 272.8c0 42.6-34.6 77.2-77.2 77.2h-95.5c-42.6 0-77.2-34.6-77.2-77.2v-95.5c0-42.6 34.6-77.2 77.2-77.2h95.5c42.6 0 77.2 34.6 77.2 77.2z"
                       fill="#FFFFFF"
                       data-original="#000000"
-                      class=""
                       opacity="1"
                     ></path>
                   </g>
                 </svg>
-              </button>
+              </a>
+              <a
+                href=""
+                className="bg-[#068297] p-2 font-semibold text-white inline-flex items-center space-x-2 rounded-full"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  version="1.1"
+                  role="img"
+                  className="w-5"
+                  x="0"
+                  y="0"
+                  viewBox="0 0 512 512"
+                >
+                  <g>
+                    <path
+                      fillRule="evenodd"
+                      d="M256 0c141.385 0 256 114.615 256 256S397.385 512 256 512 0 397.385 0 256 114.615 0 256 0zm162.5 355.241V164.978l-95.137 95.131zm-304.676 3.876h284.358l-86.908-86.908-33.123 33.118a8.563 8.563 0 0 1-6.05 2.5h-32.2a8.553 8.553 0 0 1-6.051-2.5l-33.122-33.118-86.908 86.908zM93.5 164.972v190.274l95.137-95.137zm312.906-12.089H105.6l137.844 137.844h25.117z"
+                      fill="#FFFFFF"
+                      data-original="#000000"
+                      opacity="1"
+                    ></path>
+                  </g>
+                </svg>
+              </a>
             </div>
           </div>
         </div>

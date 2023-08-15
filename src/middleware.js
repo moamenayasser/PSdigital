@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 
-const defaultLocale = "egypt-en";
-const locales = ["egypt-en"];
+const defaultLocale = "en";
+const locales = ["en"];
 
 const getLocalePartsFrom = ({ pathname, locale }) => {
   if (locale) {
