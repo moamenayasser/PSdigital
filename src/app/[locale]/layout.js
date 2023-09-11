@@ -11,10 +11,15 @@ export const metadata = {
 };
 
 const RootLayout = async ({ children, params: { locale } }) => {
-  const websiteData = await fetchData(
-    `${process.env.BASE_URL}/${process.env.PROJECT_CODE}/Retrieve`,
-    { cache: "force-cache", next: { tags: ["websiteData"] } }
-  );
+  const [websiteData, footerData] = await Promise.all([
+    fetchData(`${process.env.BASE_URL}/${process.env.PROJECT_CODE}/Retrieve`, {
+      cache: "force-cache",
+      next: { tags: ["websiteData"] },
+    }),
+    fetchData(
+      `${process.env.BASE_URL}/${process.env.PROJECT_CODE}/AdvancedContent/${process.env.COUNTRY_CODE}/fixedFooter/${locale}/Category`
+    ),
+  ]);
 
   const cookieStore = cookies();
   const theme = cookieStore.get("theme");
@@ -24,7 +29,12 @@ const RootLayout = async ({ children, params: { locale } }) => {
       <body className="leading-normal tracking-normal text-white dark:bg-black dark:text-white">
         <ResourcesProvider locale={locale} data={websiteData}>
           <ThemeProvider defaultTheme={theme ? theme.value : "light"}>
-            <ClientLayout>{children}</ClientLayout>
+            <ClientLayout
+              footerData={footerData[0]}
+              socialData={websiteData?.SocialMedia}
+            >
+              {children}
+            </ClientLayout>
           </ThemeProvider>
         </ResourcesProvider>
       </body>

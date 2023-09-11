@@ -1,5 +1,6 @@
+"use client";
+import { motion } from "framer-motion";
 const Intro = ({ locale, data }) => {
-
   return (
     <>
       <header className="bg-white text-[#001d35] dark:bg-black dark:text-white">
@@ -9,15 +10,25 @@ const Intro = ({ locale, data }) => {
           <div className="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center">
             {/* <!--Left Col--> */}
             <div className="flex flex-col w-full  justify-center items-center text-center p-10 mx-auto  md:w-11/12 xl:w-9/12">
-              <h1 className="mb-8 text-4xl font-extrabold leading-none tracking-normal text-gray-900 dark:text-white md:text-6xl md:tracking-tight">
+              <motion.h1
+                initial={{ opacity: 0, y: 80 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1 }}
+                className="mb-8 text-4xl font-extrabold leading-none tracking-normal text-[#001d35] dark:text-white md:text-6xl md:tracking-tight"
+              >
                 {data?.Name}
-              </h1>
-              <p className="px-0 mb-8 text-lg text-gray-600 dark:text-white md:text-xl lg:px-24">
+              </motion.h1>
+              <motion.p
+                initial={{ opacity: 0, y: 80 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 0.5 }}
+                className="px-0 mb-8 text-lg text-gray-600 dark:text-white md:text-xl lg:px-24"
+              >
                 {data?.DescriptionShort}
-              </p>
-              <a href="#" className="btn-action style-2">
+              </motion.p>
+              {/* <a href="#" className="btn-action style-2">
                 Contact Us
-              </a>
+              </a> */}
             </div>
             {/* <!--Right Col--> */}
           </div>

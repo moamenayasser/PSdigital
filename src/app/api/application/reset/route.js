@@ -1,8 +1,10 @@
-// import { NextResponse } from "next/server";
-// import { revalidateTag } from "next/cache";
+import { NextResponse } from "next/server";
+import { revalidateTag } from "next/cache";
 
-// export async function GET(request) {
-//   revalidateTag("websiteData");
+export async function GET(request) {
+  const tag = request.nextUrl.searchParams.get("tag");
 
-//   return NextResponse.json({ revalidated: true, now: Date.now() });
-// }
+  revalidateTag("websiteData");
+
+  return NextResponse.json({ revalidated: true, now: Date.now() });
+}

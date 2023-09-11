@@ -2,30 +2,18 @@ import fetchData from "@/utils/fetchData";
 import Marquee from "react-fast-marquee";
 
 const Clients = async ({ locale, data }) => {
- const clientsInfo = await fetchData(
-   `${process.env.BASE_URL}/${process.env.PROJECT_CODE}/AdvancedContent/${process.env.COUNTRY_CODE}/PSdigitalIntro/${locale}/Category/${data?.UniqueName}/Content`
- );
+  const clientsInfo = await fetchData(
+    `${process.env.BASE_URL}/${process.env.PROJECT_CODE}/AdvancedContent/${process.env.COUNTRY_CODE}/PSdigitalIntro/${locale}/Category/${data?.UniqueName}/Content`
+  );
 
   return (
-    <div id="clients" className="py-16 overflow-x-hidden">
-      <div className="relative text-center">
-        <h1 className="text-[#022441] absolute left-[27px] right-0 top-[-40px] mx-auto text-center text-[180px] tracking-[24px] uppercase -z-10 max-[1024px]:text-[150px] opacity-30">
-          <span className="heading-bg">Clients</span>
-        </h1>
-        <h5 className="text-[#022441] dark:text-white capitalize relative leading-[2.5] mb-[5px] after:absolute after:content-[''] after:bottom-0 after:w-[36px] after:h-[5px] after:bg-tf after:left-0 after:right-0 after:mx-auto after:text-center ">
-          {data?.Name}
-        </h5>
-        <h3 className="mb-[28px] text-[#022441] dark:text-white capitalize">
-          {data?.DescriptionShort}
-        </h3>
-      </div>
-
-      <div className="pt-20">
+    <div id="clients" className="pb-10 overflow-x-hidden">
+      <div className="">
         <Marquee gradient="true" pauseOnHover="true">
           {clientsInfo?.map((item, index) => (
             <img
               key={index}
-              className="h-[100px] w-auto object-contain m-4"
+              className="h-[100px] w-auto object-contain m-4 dark:backdrop-brightness-0"
               src={item.ImageUrl}
               alt={item.Name}
             />

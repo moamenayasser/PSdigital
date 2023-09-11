@@ -1,17 +1,17 @@
 import fetchData from "@/utils/fetchData";
+import Link from "next/link";
 
-const Projects = () => {
-// const Projects = async ({ locale, data }) => {
+// const Projects = () => {
+const Projects = ({ data }) => {
   // const media = await fetchData(
   //   `${process.env.BASE_URL}/${process.env.PROJECT_CODE}/AdvancedContent/${process.env.COUNTRY_CODE}/PSdigitalIntro/${locale}/Category/ourwork/Content/website/Media`
   // );
-  //  console.log(media);
 
   return (
     <section className="tf-section montono">
       <div className="container px-6 py-10 mx-auto">
         <div className="grid sm:grid-cols-3 lg:grid-cols-3 gap-6 pt-6">
-          <a
+          {/* <a
             className="group flex flex-col h-full border border-gray-200 hover:border-transparent hover:shadow-lg transition-all duration-300 rounded-tr-[40px] rounded-bl-[40px] p-5 dark:border-gray-700 dark:hover:border-transparent dark:hover:shadow-black/[.4]"
             href="#"
           >
@@ -45,7 +45,6 @@ const Projects = () => {
               </span>
             </div>
           </a>
-          {/* <!-- End Card --> */}
           <a
             className="group flex flex-col h-full border border-gray-200 hover:border-transparent hover:shadow-lg transition-all duration-300 rounded-tr-[40px] rounded-bl-[40px] p-5 dark:border-gray-700 dark:hover:border-transparent dark:hover:shadow-black/[.4]"
             href="#"
@@ -80,7 +79,6 @@ const Projects = () => {
               </span>
             </div>
           </a>
-          {/* <!-- End Card --> */}
           <a
             className="group flex flex-col h-full border border-gray-200 hover:border-transparent hover:shadow-lg transition-all duration-300 rounded-tr-[40px] rounded-bl-[40px] p-5 dark:border-gray-700 dark:hover:border-transparent dark:hover:shadow-black/[.4]"
             href="#"
@@ -114,18 +112,20 @@ const Projects = () => {
                 Facebook
               </span>
             </div>
-          </a>
-          {/* {media?.map((item, index) => (
-            <a
-              key={index}
+          </a> */}
+          {/* tesssst */}
+          {/* {media?.map((item, index) => ( */}
+          {data?.map((item, index) => (
+            <Link
               className="group flex flex-col h-full border border-gray-200 hover:border-transparent hover:shadow-lg transition-all duration-300 rounded-tr-[40px] rounded-bl-[40px] p-5 dark:border-gray-700 dark:hover:border-transparent dark:hover:shadow-black/[.4]"
-              href="#"
+              href={`/${item.UniqueName}`}
+              key={index}
             >
               <div className="aspect-w-16 aspect-h-11">
                 <img
                   className="w-full object-cover rounded-tr-[40px] rounded-bl-[40px] h-[300px]"
                   src={item?.ImageUrl}
-                  alt={item?.Alt}
+                  alt={item?.Name}
                 />
               </div>
               <div className="my-6">
@@ -150,8 +150,9 @@ const Projects = () => {
                   Facebook
                 </span>
               </div>
-            </a>
-          ))} */}
+            </Link>
+          ))}
+          {/* ))} */}
         </div>
       </div>
     </section>

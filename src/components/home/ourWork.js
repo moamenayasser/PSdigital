@@ -2,10 +2,10 @@ import fetchData from "@/utils/fetchData";
 import Tabs from "./tabs";
 
 const OurWork = async ({ locale, data }) => {
-  const workInfo = await fetchData(
-    `${process.env.BASE_URL}/${process.env.PROJECT_CODE}/AdvancedContent/${process.env.COUNTRY_CODE}/PSdigitalIntro/${locale}/Category/${data?.UniqueName}/Content`
+  const projectsInfo = await fetchData(
+    `${process.env.BASE_URL}/${process.env.PROJECT_CODE}/AdvancedContent/${process.env.COUNTRY_CODE}/ourWork/${locale}/Category`
   );
-  
+  // console.log(projectsInfo);
   return (
     <div id="ourWork" className="container">
       <div className="relative text-center">
@@ -21,10 +21,10 @@ const OurWork = async ({ locale, data }) => {
       </div>
 
       <div className="w-full max-w-7xl px-2 py-3 sm:py-16 sm:px-0 m-auto">
-        <Tabs data={workInfo} />
+        <Tabs projectsData={projectsInfo} locale={locale} />
       </div>
     </div>
   );
-}
- 
+};
+
 export default OurWork;

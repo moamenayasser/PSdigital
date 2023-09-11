@@ -1,6 +1,22 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: false,
-};
+module.exports = async () => {
+  /** @type {import('next').NextConfig} */
 
-module.exports = nextConfig;
+  fetch(`${process.env.BASE_URL}/${process.env.PROJECT_CODE}/Retrieve`, {
+    cache: "force-cache",
+    next: { tags: ["websiteData"] },
+  });
+
+  const nextConfig = {
+    reactStrictMode: false,
+    images: {
+      domains: [
+        "images.unsplash.com",
+        "cdn.tailgrids.com",
+        "images.pexels.com",
+        "api.node1.psdigitalme.com",
+      ],
+    },
+  };
+
+  return nextConfig;
+};
