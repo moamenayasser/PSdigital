@@ -13,11 +13,14 @@ const Objective = ({ data }) => {
         {data?.Name && (
           <h3 className="mt-[5px] mb-[27px] max-[767px]:text-[35px]">
             {data.Name}
+            <span className="block text-[18px] mt-3">
+              {data.DescriptionShort}
+            </span>
           </h3>
         )}
-        {data?.DescriptionShort && (
+        {/* {data?.DescriptionShort && (
           <h4 className="mb-2">{data.DescriptionShort}</h4>
-        )}
+        )} */}
         <div dangerouslySetInnerHTML={{ __html: data.DescriptionLong }} />
       </motion.div>
 

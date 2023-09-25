@@ -27,10 +27,10 @@ const Projects = ({ data }) => {
                   short description for brand short and description for brand
                   description
                 </p>
-                <p className="text-gray-800 flex gap-1 group-hover:text-[#fba01c] group transition justify-center dark:text-white">
+                <p className="text-[#fba01c] flex gap-1 group-hover:text-[#001d35] group transition justify-center dark:text-white">
                   Read more{" "}
                   <svg
-                    className="-rotate-45 mt-1 group-hover:fill-[#fba01c] fill-black dark:fill-white"
+                    className="-rotate-45 mt-1 group-hover:fill-[#001d35] fill-[#fba01c] dark:fill-white"
                     width="20"
                     height="20"
                     x="0"
