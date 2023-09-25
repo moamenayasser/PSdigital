@@ -9,11 +9,11 @@ const Clients = async ({ locale, data }) => {
   return (
     <div id="clients" className="pb-10 overflow-x-hidden">
       <div className="">
-        <Marquee gradient="true" pauseOnHover="true">
+        <Marquee pauseOnHover="true">
           {clientsInfo?.map((item, index) => (
             <img
               key={index}
-              className="h-[100px] w-auto object-contain m-4 dark:backdrop-brightness-0"
+              className="h-[100px] w-auto object-contain m-4 dark:backdrop-brightness-0 dark:invert"
               src={item.ImageUrl}
               alt={item.Name}
             />

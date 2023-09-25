@@ -302,6 +302,14 @@ progress {
 /*
 Correct the cursor style of increment and decrement buttons in Safari.
 */
+html {
+  --cursor-color: #001d35;
+  --cursorPoint-color: #fff;
+}
+
+html.dark-mode {
+  --cursor-color: #fff
+}
 
 ::-webkit-inner-spin-button,
 ::-webkit-outer-spin-button {

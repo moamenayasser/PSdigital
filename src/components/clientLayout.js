@@ -8,10 +8,10 @@ const ClientLayout = (props) => {
 
   return (
     <>
+      <AnimatedCursor />
       <Header />
       <div className=" min-h-screen flex flex-col justify-between">
         <main className="flex flex-col flex-grow w-full">{children}</main>
-        <AnimatedCursor />
       </div>
       <Footer footerData={footerData} socialData={socialData} />
     </>

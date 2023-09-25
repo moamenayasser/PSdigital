@@ -28,7 +28,7 @@ const Tabs = ({ projectsData }) => {
                 clsx(
                   "w-full rounded-[40px] text-sm font-medium uppercase leading-5",
                   {
-                    "w-full bg-[#022441] border-none rounded-[40px] p-2 shadow":
+                    "w-full bg-transparent border rounded-[40px] p-2 shadow text-[#022441] border-[#022441] dark:text-white dark:border-white":
                       selected,
                     "text-white bg-[#068297] hover:text-[#eee] p-2 w-full":
                       !selected,
