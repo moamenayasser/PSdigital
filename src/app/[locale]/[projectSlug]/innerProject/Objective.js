@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 
 const Objective = ({ data }) => {
+  console.log(data);
   return (
     <>
       <motion.div
@@ -29,19 +30,19 @@ const Objective = ({ data }) => {
           initial={{ opacity: 0, y: 50, x: -50 }}
           whileInView={{ opacity: 1, y: 0, x: 0 }}
           transition={{ duration: 1 }}
-          src={data?.ImageUrl}
+          src={data?.FeatureImageUrl}
           alt={data?.Name}
           className="rounded-[20px] w-full
-              sm:w-[48%] h-[400px]"
+              sm:w-[48%] h-[620px]"
         />
         <motion.img
           initial={{ opacity: 0, y: 50, x: 50 }}
           whileInView={{ opacity: 1, y: 0, x: 0 }}
           transition={{ duration: 1, delay: 0.5 }}
-          src={data?.FeatureImageUrl}
+          src={data?.FeatureMediumImage}
           alt={data?.Name}
           className="rounded-[20px] w-full
-             sm:w-[48%] h-[400px]"
+             sm:w-[48%] h-[620px]"
         />
         <motion.img
           initial={{ opacity: 0, y: 50, x: 50 }}
@@ -50,7 +51,7 @@ const Objective = ({ data }) => {
           src={data?.FeatureThumbnailImage}
           alt={data?.Name}
           className="rounded-[20px]
-              w-full h-[500px]"
+              w-full h-[600px]"
         />
       </div>
     </>
