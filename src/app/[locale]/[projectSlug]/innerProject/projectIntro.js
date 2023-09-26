@@ -6,10 +6,10 @@ const ProjectIntro = ({ data }) => {
   return (
     <>
       <div className="mb-[30px] w-full relative bg-[#001d35] h-[80vh]  block pb-10 pt-6">
-        <Marquee className="overflow-hidden">
+        <Marquee className="overflow-hidden" autoFill="true">
           {data?.Name && (
-            <h1 className=" text-white text-xl sm:text-[15rem] leading-[15rem] opacity-10">
-              {data.Name}
+            <h1 className=" text-white text-xl sm:text-[12rem] tracking-[2px] whitespace-break-spaces leading-[16rem] opacity-10">
+              {data.Name}{" "}
             </h1>
           )}
         </Marquee>
