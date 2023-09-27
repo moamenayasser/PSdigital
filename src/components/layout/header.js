@@ -8,7 +8,7 @@ const Header = () => {
     >
       <div className="flex lg:flex-1">
         <a href="/" className="-m-1.5 p-1.5">
-          <img className="" src="/images/logo.png" alt="logo" width={100} />
+          <img className="" src="/images/logo.svg" alt="logo" width={100} />
         </a>
       </div>
       <div className="flex lg:hidden">

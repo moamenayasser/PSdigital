@@ -25,7 +25,7 @@ const Objective = ({ data }) => {
         <div dangerouslySetInnerHTML={{ __html: data.DescriptionLong }} />
       </motion.div>
 
-      <div className="flex flex-wrap gap-10 items-center justify-start pr-[15px] mb-5 max-[767px]:mb-[30px]">
+      <div className="flex flex-wrap gap-10 items-center justify-start pr-0 sm:pr-[15px] mb-5 max-[767px]:mb-[30px]">
         <motion.img
           initial={{ opacity: 0, y: 50, x: -50 }}
           whileInView={{ opacity: 1, y: 0, x: 0 }}
@@ -33,7 +33,7 @@ const Objective = ({ data }) => {
           src={data?.FeatureImageUrl}
           alt={data?.Name}
           className="rounded-[20px] w-full
-              sm:w-[48%] h-[620px]"
+              sm:w-[47.5%] h-auto"
         />
         <motion.img
           initial={{ opacity: 0, y: 50, x: 50 }}
@@ -42,7 +42,7 @@ const Objective = ({ data }) => {
           src={data?.FeatureMediumImage}
           alt={data?.Name}
           className="rounded-[20px] w-full
-             sm:w-[48%] h-[620px]"
+             sm:w-[47.5%] h-auto"
         />
         <motion.img
           initial={{ opacity: 0, y: 50, x: 50 }}
@@ -51,7 +51,7 @@ const Objective = ({ data }) => {
           src={data?.FeatureThumbnailImage}
           alt={data?.Name}
           className="rounded-[20px]
-              w-full h-[600px]"
+              w-full  h-auto"
         />
       </div>
     </>

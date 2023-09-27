@@ -17,7 +17,7 @@ const Results = ({ data }) => {
           )}
           <div dangerouslySetInnerHTML={{ __html: data.DescriptionLong }} />
         </motion.div> */}
-        <div className="w-full sm:w-[50%]">
+        {/* <div className="w-full sm:w-[50%]">
           <motion.img
             initial={{ opacity: 0, x: -80 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -38,7 +38,7 @@ const Results = ({ data }) => {
             className="rounded-[20px] h-[400px] object-cover
               w-full "
           />
-        </div>
+        </div> */}
       </div>
       <motion.div
         initial={{ opacity: 0, y: 80 }}
