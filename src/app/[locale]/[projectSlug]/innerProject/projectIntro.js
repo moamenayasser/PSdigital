@@ -5,7 +5,7 @@ import Marquee from "react-fast-marquee";
 const ProjectIntro = ({ data }) => {
   return (
     <>
-      <div className="mb-[30px] w-full relative bg-[#001d35] h-[90vh] min-[1600px]:h-[55vh]  block pb-10 pt-6">
+      <div className="mb-[30px] w-full relative bg-[#001d35] h-[90vh] min-[1600px]:h-[65vh]  block pb-10 pt-6">
         <Marquee className="overflow-hidden" autoFill="true">
           {data?.Name && (
             <h1 className=" text-white text-7xl sm:text-[12rem] tracking-[2px] whitespace-break-spaces leading-[10rem] sm:leading-[16rem] opacity-10">
