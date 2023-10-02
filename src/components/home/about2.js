@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 
 const OurServices = ({ data }) => {
-  // console.log(data);
+  console.log(data);
   return (
     <>
       <section id="services" className=" pt-2 sm:pt-20 pb-20">
@@ -22,6 +22,7 @@ const OurServices = ({ data }) => {
               autoPlay
               loop
               muted
+              playsInline
             >
               <source src="/images/ps.mp4" type="video/mp4" />
               Your browser does not support the video tag.
