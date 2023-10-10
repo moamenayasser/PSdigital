@@ -56,7 +56,7 @@ const Footer = ({ footerData, socialData }) => {
               <Image
                 width={500}
                 height={500}
-                className="w-full"
+                className="w-full lg:w-[450px]"
                 src="/images/cer2.jpg"
                 alt="certificate"
               />
