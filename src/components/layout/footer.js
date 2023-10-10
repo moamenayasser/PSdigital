@@ -1,7 +1,11 @@
 import SocialItem from "./SocialItem";
-
+import { useState } from "react";
+import Drawer from "../Drawer";
+import Image from "next/image";
 const Footer = ({ footerData, socialData }) => {
-  console.log(socialData);
+  const [openNav, setOpenNav] = useState(false);
+  const handleToggle = () => setOpenNav((prev) => !prev);
+  // console.log(socialData);
   return (
     <div
       id="contact"
@@ -25,6 +29,40 @@ const Footer = ({ footerData, socialData }) => {
             </div>
           )}
         </div>
+        <div className="flex flex-col items-center gap-0 justify-center border-t py-2 border-white">
+          <a href="#" onClick={handleToggle} className="text-xl font-semibold">
+            View our certifacte from innovation awards
+          </a>
+          <a className="cursor-pointer" onClick={handleToggle}>
+            <img width={100} src="/images/cer.png" alt="certificate" />
+          </a>
+        </div>
+        <Drawer
+          placement="bottom"
+          open={openNav}
+          onClose={handleToggle}
+          size="110vh"
+          className=" !bg-white/70"
+        >
+          <div className="overflow-y-auto relative">
+            <button
+              type="button"
+              className="-m-2.5 absolute right-4 top-0 rounded-md p-2.5 text-[#022441] float-right text-xl"
+              onClick={handleToggle}
+            >
+              <span className="sr-only">Open main menu</span>x
+            </button>
+            <div className="pt-10 flex justify-center">
+              <Image
+                width={500}
+                height={500}
+                className="w-full"
+                src="/images/cer2.jpg"
+                alt="certificate"
+              />
+            </div>
+          </div>
+        </Drawer>
         <div className="flex flex-col">
           <hr className="border-gray-300" />
           <p className="w-full text-center my-12 text-gray-border-gray-300">

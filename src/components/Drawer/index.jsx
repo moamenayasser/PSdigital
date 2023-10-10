@@ -11,6 +11,25 @@ import {
 import { useFloating, useInteractions, useDismiss } from "@floating-ui/react";
 import merge from "deepmerge";
 import cn from "@/utils/cn";
+const objectsToArray = (object) => {
+  let result = [];
+
+  Object.values(object).forEach((value) => {
+    if (typeof value === "string") {
+      result = [...result, value];
+    } else if (
+      typeof value === "object" &&
+      !Array.isArray(value) &&
+      value !== null
+    ) {
+      result = [...result, ...objectsToArray(value)];
+    }
+
+    return undefined;
+  });
+
+  return result;
+};
 const objectsToString = (object) => {
   return objectsToArray(object).join(" ");
 };

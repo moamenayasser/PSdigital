@@ -1,6 +1,10 @@
+import { useState } from "react";
+import Drawer from "../Drawer";
 import ToggleThemeMode from "../ToggleThemeMode";
 
 const Header = () => {
+  const [openNav, setOpenNav] = useState(false);
+  const handleToggle = () => setOpenNav((prev) => !prev);
   return (
     <nav
       className="flex items-center justify-between p-6 lg:px-8"
@@ -15,6 +19,7 @@ const Header = () => {
         <button
           type="button"
           className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+          onClick={handleToggle}
         >
           <span className="sr-only">Open main menu</span>
           <svg
@@ -61,6 +66,58 @@ const Header = () => {
           Contact Us
         </a>
       </div>
+      <Drawer
+        placement="top"
+        open={openNav}
+        onClose={handleToggle}
+        className="p-4 lg:hidden"
+        size={800}
+      >
+        <button
+          type="button"
+          className="-m-2.5 float-right mr-2 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+          onClick={handleToggle}
+        >
+          <span className="sr-only">Open main menu</span>x
+        </button>
+        <div className="flex flex-col gap-10 pt-10 overflow-y-auto">
+          <a
+            href="#services"
+            onClose={handleToggle}
+            className="font-semibold leading-6 text-[#001d35] dark:text-white"
+          >
+            Services
+          </a>
+          <a
+            href="#ourWork"
+            onClose={handleToggle}
+            className="font-semibold leading-6 text-[#001d35] dark:text-white"
+          >
+            Our Work
+          </a>
+          <a
+            href="#ourTeam"
+            onClose={handleToggle}
+            className="font-semibold leading-6 text-[#001d35] dark:text-white"
+          >
+            Our Team
+          </a>
+          <a
+            href="#clients"
+            onClose={handleToggle}
+            className="font-semibold leading-6 text-[#001d35] dark:text-white"
+          >
+            Clients
+          </a>
+          <a
+            href="#contact"
+            onClose={handleToggle}
+            className="font-semibold leading-6 text-[#001d35] dark:text-white"
+          >
+            Contact Us
+          </a>
+        </div>
+      </Drawer>
       <div className="hidden lg:flex lg:flex-1 lg:justify-end">
         <ToggleThemeMode />
       </div>
