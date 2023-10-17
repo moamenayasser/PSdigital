@@ -5,9 +5,14 @@ import clsx from "clsx";
 import { useState } from "react";
 
 const Tabs = ({ projectsData }) => {
-  const parentCategories = projectsData?.filter(
-    (item) => !item.ParentCategoryUniqueName
-  );
+  const parentCategories = projectsData?.filter((item) => {
+    const hasProjects = projectsData?.filter(
+      (project) => item.UniqueName === project.ParentCategoryUniqueName
+    );
+
+    return !item.ParentCategoryUniqueName && hasProjects.length !== 0;
+  });
+
   const dataObject = projectsData
     ?.filter((item) => item.ParentCategoryUniqueName)
     .reduce((acc, cur) => {
@@ -16,7 +21,19 @@ const Tabs = ({ projectsData }) => {
       return acc;
     }, Object.create(null));
 
-  const [categories] = useState({ ...dataObject });
+  const sortedDataObject = Object.keys(dataObject).sort(
+    (a, b) =>
+      parentCategories.findIndex((item) => item.Name === a) -
+      parentCategories.findIndex((item) => item.Name === b)
+  );
+  const finalData = sortedDataObject.reduce((acc, cur) => {
+    acc[cur] = dataObject[cur];
+    return acc;
+  }, {});
+  console.log(sortedDataObject);
+
+  const [categories] = useState({ ...finalData });
+
   return (
     <>
       <Tab.Group>
