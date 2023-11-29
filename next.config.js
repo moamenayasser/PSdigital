@@ -13,7 +13,7 @@ module.exports = async () => {
         "images.unsplash.com",
         "cdn.tailgrids.com",
         "images.pexels.com",
-        "api.node1.psdigitalme.com",
+        "apinode1.psdigital.me",
       ],
     },
   };
