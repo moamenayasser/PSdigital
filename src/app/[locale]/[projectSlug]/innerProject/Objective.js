@@ -2,7 +2,6 @@
 import { motion } from "framer-motion";
 
 const Objective = ({ data }) => {
-  console.log(data);
   return (
     <>
       <motion.div

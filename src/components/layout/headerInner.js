@@ -4,7 +4,7 @@ import Drawer from "../Drawer";
 // import ToggleThemeMode from "../ToggleThemeMode";
 import Certificates from "./certificates";
 
-const Header = () => {
+const HeaderInner = () => {
   const [openNav, setOpenNav] = useState(false);
   const handleToggle = () => setOpenNav((prev) => !prev);
   return (
@@ -38,31 +38,31 @@ const Header = () => {
       </div>
       <div className="hidden lg:flex lg:gap-x-12">
         <a
-          href="#services"
+          href="/#services"
           className="font-semibold leading-6 text-[#001d35] dark:text-white"
         >
           Services
         </a>
         <a
-          href="#ourWork"
+          href="/#ourWork"
           className="font-semibold leading-6 text-[#001d35] dark:text-white"
         >
           Our Work
         </a>
         <a
-          href="#ourTeam"
+          href="/#ourTeam"
           className="font-semibold leading-6 text-[#001d35] dark:text-white"
         >
           Our Team
         </a>
         <a
-          href="#clients"
+          href="/#clients"
           className="font-semibold leading-6 text-[#001d35] dark:text-white"
         >
           Clients
         </a>
         <a
-          href="#contact"
+          href="/#contact"
           className="font-semibold leading-6 text-[#001d35] dark:text-white"
         >
           Contact Us
@@ -84,35 +84,35 @@ const Header = () => {
         </button>
         <div className="flex flex-col gap-10 pt-10 overflow-y-auto">
           <a
-            href="#services"
+            href="/#services"
             onClose={handleToggle}
             className="font-semibold leading-6 text-[#001d35] dark:text-white"
           >
             Services
           </a>
           <a
-            href="#ourWork"
+            href="/#ourWork"
             onClose={handleToggle}
             className="font-semibold leading-6 text-[#001d35] dark:text-white"
           >
             Our Work
           </a>
           <a
-            href="#ourTeam"
+            href="/#ourTeam"
             onClose={handleToggle}
             className="font-semibold leading-6 text-[#001d35] dark:text-white"
           >
             Our Team
           </a>
           <a
-            href="#clients"
+            href="/#clients"
             onClose={handleToggle}
             className="font-semibold leading-6 text-[#001d35] dark:text-white"
           >
             Clients
           </a>
           <a
-            href="#contact"
+            href="/#contact"
             onClose={handleToggle}
             className="font-semibold leading-6 text-[#001d35] dark:text-white"
           >
@@ -128,4 +128,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default HeaderInner;

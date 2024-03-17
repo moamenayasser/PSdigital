@@ -30,7 +30,6 @@ const Tabs = ({ projectsData }) => {
     acc[cur] = dataObject[cur];
     return acc;
   }, {});
-  console.log(sortedDataObject);
 
   const [categories] = useState({ ...finalData });
 

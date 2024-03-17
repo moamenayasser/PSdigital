@@ -9,7 +9,7 @@ const AboutPS = ({ locale, data }) => {
         speed={15}
         className="absolute overflow-hidden top-[-100px] ps-bg"
       >
-        <h1 className="z-1 font-bold text-white text-xl sm:text-[14rem] leading-[20rem] flex opacity-5">
+        <h1 className="z-1 font-bold text-white text-7xl sm:text-[14rem] leading-[20rem] flex opacity-5">
           {data?.Name}
         </h1>
       </Marquee>

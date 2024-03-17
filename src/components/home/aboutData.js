@@ -9,7 +9,7 @@ const AboutData = ({ data }) => {
         transition={{ duration: 1 }}
         className="relative text-left"
       >
-        <h1 className="text-[#022441] absolute left-[0]  top-[-40px] mx-auto text-center text-[120px] tracking-[8px] uppercase -z-10 max-[1024px]:text-[100px] opacity-20">
+        <h1 className="text-[#022441] absolute left-[0] hidden md:block top-[-40px] mx-auto text-center text-[120px] tracking-[8px] uppercase -z-10 max-[1024px]:text-[100px] opacity-20">
           <span className="heading-bg">Services</span>
         </h1>
         <h5 className="text-[#022441] dark:text-white capitalize relative leading-[2.5] mb-[5px] after:absolute after:content-[''] after:bottom-0 after:w-[36px] after:h-[5px] after:bg-[#fba01c] after:left-0  after:mx-auto after:text-left ">

@@ -24,7 +24,6 @@ const RootLayout = async ({ children, params: { locale } }) => {
       `${process.env.BASE_URL}/${process.env.PROJECT_CODE}/ProjectConfiguration`
     ),
   ]);
-  console.log(projectConfig);
   const cookieStore = cookies();
   const theme = cookieStore.get("theme");
 

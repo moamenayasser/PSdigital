@@ -5,6 +5,7 @@ import AboutPS from "@/components/home/ps";
 import OurWork from "@/components/home/ourWork";
 import OurTeam from "@/components/home/team";
 import fetchData from "@/utils/fetchData";
+import Header from "@/components/layout/header";
 
 export async function generateMetadata({ params: { locale } }) {
   const [websiteData, seoData] = await Promise.all([
@@ -67,6 +68,7 @@ const HomePage = async ({ params: { locale } }) => {
   );
   return (
     <>
+      <Header />
       {heroData && <Intro locale={locale} data={heroData} />}
       {clientsData && <Clients locale={locale} data={clientsData} />}
       {aboutData && <AboutPS locale={locale} data={aboutData} />}

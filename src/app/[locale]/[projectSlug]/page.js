@@ -4,6 +4,8 @@ import Solution from "./innerProject/Solution";
 import Results from "./innerProject/Results";
 import Conclusion from "./innerProject/Conclusion";
 import fetchData from "@/utils/fetchData";
+import HeaderInner from "@/components/layout/headerInner";
+import Link from "next/link";
 
 // export async function generateMetadata({ params: { locale, projectSlug } }) {
 //   const [websiteData, seoData] = await Promise.all([
@@ -59,18 +61,29 @@ const InnerProject = async ({ params: { locale, projectSlug } }) => {
     (item) => item.PageTitle === "Conclusion"
   );
   return (
-    <section className="">
-      {projectIntro && <ProjectIntro data={projectIntro} />}
+    <>
+      <HeaderInner />
+      <section className="">
+        {projectIntro && <ProjectIntro data={projectIntro} />}
 
-      <div className="flex justify-center max-[900px]:flex-col-reverse gap-10">
-        <div className="w-[80%] max-[900px]:w-[100%] ">
-          {projectObjective && <Objective data={projectObjective} />}
-          {projectSolution && <Solution data={projectSolution} />}
-          {projectResults && <Results data={projectResults} />}
-          {projectConclusion && <Conclusion data={projectConclusion} />}
+        <div className="flex justify-center max-[900px]:flex-col-reverse gap-10">
+          <div className="w-[80%] max-[900px]:w-[100%] ">
+            {projectObjective && <Objective data={projectObjective} />}
+            {projectSolution && <Solution data={projectSolution} />}
+            {projectResults && <Results data={projectResults} />}
+            {projectConclusion && <Conclusion data={projectConclusion} />}
+            <div className="text-center">
+              <Link
+                href="/#ourWork"
+                className="bg-[#001d35] border-[#001d35] border-2 text-white mb-20 font-bold rounded-full p-3 px-7 text-base transition-all hover:bg-transparent hover:text-[#001d35]"
+              >
+                Back to Work
+              </Link>
+            </div>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 

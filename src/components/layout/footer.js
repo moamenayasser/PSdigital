@@ -2,9 +2,16 @@ import SocialItem from "./SocialItem";
 import { useState } from "react";
 import Drawer from "../Drawer";
 import Image from "next/image";
+import ContactUsPop from "./ContactUsPop";
 const Footer = ({ footerData, socialData }) => {
   const [openNav, setOpenNav] = useState(false);
+  const [drawerImg, setDrawerImg] = useState("");
   const handleToggle = () => setOpenNav((prev) => !prev);
+
+  const toggleWithImg = (imgSrc) => {
+    setDrawerImg(imgSrc);
+    handleToggle();
+  };
   // console.log(socialData);
   return (
     <div
@@ -16,9 +23,12 @@ const Footer = ({ footerData, socialData }) => {
           <h1 className="w-full md:w-2/3">{footerData?.Name}</h1>
         </div>
         <div className="flex mt-8 flex-col md:flex-row md:justify-between">
-          <p className="w-full md:w-2/3 text-gray-400 pb-10">
-            {footerData?.DescriptionShort}
-          </p>
+          <div className="flex-1">
+            <p className="w-full md:w-2/3 text-gray-400 pb-7">
+              {footerData?.DescriptionShort}
+            </p>
+            <ContactUsPop />
+          </div>
           {socialData?.length !== 0 && (
             <div className="pt-6 md:pt-0 mb-4 sm:mb-0">
               <div className="flex flex-wrap justify-center gap-2">
@@ -30,12 +40,29 @@ const Footer = ({ footerData, socialData }) => {
           )}
         </div>
         <div className="flex flex-col items-center gap-0 justify-center border-t py-2 border-white">
-          <a href="#" onClick={handleToggle} className="text-xl font-semibold">
+          <a href="#" className="text-xl font-semibold">
             View our certifacte from innovation awards
           </a>
-          <a className="cursor-pointer" onClick={handleToggle}>
-            <img width={100} src="/images/cer.png" alt="certificate" />
-          </a>
+          <div className="flex gap-3">
+            <a
+              className="cursor-pointer"
+              onClick={() => toggleWithImg("/images/cer2.jpg")}
+            >
+              <img width={105} src="/images/cer.png" alt="certificate" />
+            </a>
+            <a
+              className="cursor-pointer bg-white rounded-full w-24 h-24 text-center pt-2"
+              onClick={() => toggleWithImg("/images/CeoOftheyearphoto.svg")}
+            >
+              <img
+                width={82}
+                height={82}
+                className="object-contain "
+                src="/images/CeoOftheyear.svg"
+                alt="certificate"
+              />
+            </a>
+          </div>
         </div>
         <Drawer
           placement="bottom"
@@ -53,20 +80,22 @@ const Footer = ({ footerData, socialData }) => {
               <span className="sr-only">Open main menu</span>x
             </button>
             <div className="pt-10 flex justify-center">
-              <Image
-                width={500}
-                height={500}
-                className="w-full lg:w-[450px]"
-                src="/images/cer2.jpg"
-                alt="certificate"
-              />
+              {drawerImg && (
+                <Image
+                  width={500}
+                  height={500}
+                  className="w-full lg:w-[450px]"
+                  src={drawerImg}
+                  alt="certificate"
+                />
+              )}
             </div>
           </div>
         </Drawer>
         <div className="flex flex-col">
           <hr className="border-gray-300" />
           <p className="w-full text-center my-12 text-gray-border-gray-300">
-            Copyright © 2023 PSdigital
+            Copyright © 2024 PSdigital
           </p>
         </div>
       </div>
