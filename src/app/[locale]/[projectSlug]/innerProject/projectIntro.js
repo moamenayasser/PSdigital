@@ -14,7 +14,7 @@ const ProjectIntro = ({ data }) => {
           )}
         </Marquee>
         <div className="container">
-          <div className="flex flex-col sm:flex-row gap-0 justify-between -mt-48">
+          <div className="flex flex-col sm:flex-row gap-0 justify-between -mt-32 md:-mt-48">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}

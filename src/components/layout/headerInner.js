@@ -9,12 +9,12 @@ const HeaderInner = () => {
   const handleToggle = () => setOpenNav((prev) => !prev);
   return (
     <nav
-      className="flex items-center justify-between p-6 lg:px-8"
+      className="flex items-center justify-between p-1 md:p-6 lg:px-8"
       aria-label="Global"
     >
       <div className="flex lg:flex-1">
         <a href="/" className="-m-1.5 p-1.5">
-          <img className="" src="/images/logo.svg" alt="logo" width={100} />
+          <img className="" src="/images/logo.svg" alt="logo" width={120} />
         </a>
       </div>
       <div className="flex lg:hidden">
