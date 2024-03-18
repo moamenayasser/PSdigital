@@ -77,7 +77,7 @@ const InnerProject = async ({ params: { locale, projectSlug } }) => {
                 href="/#ourWork"
                 className="bg-[#001d35] border-[#001d35] border-2 text-white mb-20 font-bold rounded-full p-3 px-7 text-base transition-all hover:bg-transparent hover:text-[#001d35]"
               >
-                Back to Work
+                Back to all Work
               </Link>
             </div>
           </div>

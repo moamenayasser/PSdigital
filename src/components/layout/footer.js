@@ -12,17 +12,17 @@ const Footer = ({ footerData, socialData }) => {
     setDrawerImg(imgSrc);
     handleToggle();
   };
-  // console.log(socialData);
+  console.log(socialData);
   return (
     <div
       id="contact"
       className="w-full pt-20 flex items-center justify-center bg-[#001d35]"
     >
       <div className="md:w-2/3 w-full px-4 text-white flex flex-col">
-        <div className="w-full text-4xl sm:text-7xl font-bold">
+        <div className="w-full text-4xl sm:text-7xl font-bold  text-center md:text-left">
           <h1 className="w-full md:w-2/3">{footerData?.Name}</h1>
         </div>
-        <div className="flex mt-8 flex-col md:flex-row md:justify-between">
+        <div className="flex mt-8 flex-col md:flex-row md:justify-between text-center md:text-left">
           <div className="flex-1">
             <p className="w-full md:w-2/3 text-gray-400 pb-7">
               {footerData?.DescriptionShort}
@@ -40,7 +40,10 @@ const Footer = ({ footerData, socialData }) => {
           )}
         </div>
         <div className="flex flex-col items-center gap-0 justify-center border-t py-2 border-white">
-          <a href="#" className="text-xl font-semibold">
+          <a
+            href="#"
+            className="text-xl font-semibold text-center md:text-left"
+          >
             View our certifacte from innovation awards
           </a>
           <div className="flex gap-3">
@@ -69,15 +72,42 @@ const Footer = ({ footerData, socialData }) => {
           open={openNav}
           onClose={handleToggle}
           size="110vh"
-          className=" !bg-white/70"
+          className="!bg-transparent"
         >
-          <div className="overflow-y-auto relative">
+          <div
+            onClick={handleToggle}
+            className="absolute w-full h-full  !bg-white/70"
+          ></div>
+          <div className="overflow-y-auto relative flex justify-center flex-row-reverse">
             <button
               type="button"
-              className="-m-2.5 absolute right-4 top-0 rounded-md p-2.5 text-[#022441] float-right text-xl"
+              className="absolute right-5 md:right-1/4 top-2 rounded-full p-2.5 text-[#022441] bg-white "
               onClick={handleToggle}
             >
-              <span className="sr-only">Open main menu</span>x
+              <span className="sr-only">Open main menu</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 512 512"
+              >
+                <g>
+                  <g data-name="02 User">
+                    <path
+                      d="M25 512a25 25 0 0 1-17.68-42.68l462-462a25 25 0 0 1 35.36 35.36l-462 462A24.93 24.93 0 0 1 25 512z"
+                      fill="#022441"
+                      opacity="1"
+                      data-original="#022441"
+                    ></path>
+                    <path
+                      d="M487 512a24.93 24.93 0 0 1-17.68-7.32l-462-462A25 25 0 0 1 42.68 7.32l462 462A25 25 0 0 1 487 512z"
+                      fill="#022441"
+                      opacity="1"
+                      data-original="#022441"
+                    ></path>
+                  </g>
+                </g>
+              </svg>
             </button>
             <div className="pt-10 flex justify-center">
               {drawerImg && (

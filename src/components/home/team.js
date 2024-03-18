@@ -22,11 +22,11 @@ const OurTeam = async ({ locale, data }) => {
       </div>
 
       <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-8 lg:px-6">
-        <div className="flex gap-8 lg:gap-16 justify-center flex-wrap">
+        <div className="flex lg:gap-16 justify-center flex-wrap">
           {teamInfo?.map((item, index) => (
             <div
               key={index}
-              className="text-center text-gray-500  md:flex-1 hover:animate-fade-up "
+              className="text-center text-gray-500 w-1/2 md:w-auto hover:animate-fade-up "
             >
               <img
                 className="mx-auto mb-4 w-36 h-36 rounded-full "

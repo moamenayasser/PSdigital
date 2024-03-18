@@ -33,15 +33,42 @@ const Certificates = () => {
         open={openNav}
         onClose={handleToggle}
         size="110vh"
-        className=" !bg-white/70"
+        className=" !bg-transparent"
       >
-        <div className="overflow-y-auto relative">
+        <div
+          onClick={handleToggle}
+          className="absolute w-full h-full  !bg-white/70"
+        ></div>
+        <div className="overflow-y-auto relative flex justify-center flex-row-reverse">
           <button
             type="button"
-            className="-m-2.5 absolute right-4 top-0 rounded-md p-2.5 text-[#022441] float-right text-xl"
+            className="absolute right-5 md:right-1/4 top-2 rounded-full p-2.5 text-[#022441] bg-white "
             onClick={handleToggle}
           >
-            <span className="sr-only">Open main menu</span>x
+            <span className="sr-only">Open main menu</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 512 512"
+            >
+              <g>
+                <g data-name="02 User">
+                  <path
+                    d="M25 512a25 25 0 0 1-17.68-42.68l462-462a25 25 0 0 1 35.36 35.36l-462 462A24.93 24.93 0 0 1 25 512z"
+                    fill="#022441"
+                    opacity="1"
+                    data-original="#022441"
+                  ></path>
+                  <path
+                    d="M487 512a24.93 24.93 0 0 1-17.68-7.32l-462-462A25 25 0 0 1 42.68 7.32l462 462A25 25 0 0 1 487 512z"
+                    fill="#022441"
+                    opacity="1"
+                    data-original="#022441"
+                  ></path>
+                </g>
+              </g>
+            </svg>
           </button>
           <div className="pt-10 flex justify-center">
             {drawerImg && (

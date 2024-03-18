@@ -85,35 +85,35 @@ const Header = () => {
         <div className="flex flex-col gap-10 pt-10 overflow-y-auto">
           <a
             href="#services"
-            onClose={handleToggle}
+            onClick={handleToggle}
             className="font-semibold leading-6 text-[#001d35] dark:text-white"
           >
             Services
           </a>
           <a
             href="#ourWork"
-            onClose={handleToggle}
+            onClick={handleToggle}
             className="font-semibold leading-6 text-[#001d35] dark:text-white"
           >
             Our Work
           </a>
           <a
             href="#ourTeam"
-            onClose={handleToggle}
+            onClick={handleToggle}
             className="font-semibold leading-6 text-[#001d35] dark:text-white"
           >
             Our Team
           </a>
           <a
             href="#clients"
-            onClose={handleToggle}
+            onClick={handleToggle}
             className="font-semibold leading-6 text-[#001d35] dark:text-white"
           >
             Clients
           </a>
           <a
             href="#contact"
-            onClose={handleToggle}
+            onClick={handleToggle}
             className="font-semibold leading-6 text-[#001d35] dark:text-white"
           >
             Contact Us

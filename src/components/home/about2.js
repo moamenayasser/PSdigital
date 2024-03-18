@@ -13,7 +13,7 @@ const OurServices = async ({ data, locale }) => {
           <div className="w-full lg:w-1/2 relative">
             {/* <video src="/images/ps.mp4" autoPlay></video> */}
             <video
-              className="w-full h-[600px] object-contain"
+              className="w-full h-80 md:h-[600px] object-contain"
               width="320"
               height="240"
               autoPlay
