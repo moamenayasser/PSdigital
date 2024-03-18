@@ -78,30 +78,28 @@ const SocialItem = ({ item }) => {
           </div>
         )}
 
-        {item.Platform === 5 && (
-          <div className="bg-[#fba01c] p-2 font-semibold text-white inline-flex items-center space-x-2 rounded-full">
+        {item.Platform === 3 && (
+          <div className="bg-[#00adef] p-2 font-semibold text-white inline-flex items-center space-x-2 rounded-full">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              version="1.1"
-              role="img"
               className="w-5"
               x="0"
               y="0"
-              viewBox="0 0 512 512"
+              viewBox="0 0 24 24"
             >
               <g>
                 <path
-                  fillRule="evenodd"
-                  d="M256 0c141.385 0 256 114.615 256 256S397.385 512 256 512 0 397.385 0 256 114.615 0 256 0zm162.5 355.241V164.978l-95.137 95.131zm-304.676 3.876h284.358l-86.908-86.908-33.123 33.118a8.563 8.563 0 0 1-6.05 2.5h-32.2a8.553 8.553 0 0 1-6.051-2.5l-33.122-33.118-86.908 86.908zM93.5 164.972v190.274l95.137-95.137zm312.906-12.089H105.6l137.844 137.844h25.117z"
+                  d="M22.6 3.2c-.6-.8-1.7-1.2-3-1.2-2.7 0-5.9 2.1-6.5 5.5 0 .2 0 .4.2.5s.4.1.5 0c1-.6 2-.5 2.4.3.3.6.2 1.5-.3 2.3-1.5 2.2-2.3 3-3 3.5-.4-.6-1-3-1.2-4-.2-.6-.3-1.3-.4-2.1-.5-2.7-1-5.8-3.4-5.8-.2 0-.4 0-.5.1-3 .6-6.7 5-6.9 5.2-.1.2-.2.4 0 .6l.9 1.2c.1.1.2.2.3.2s.3 0 .4-.1c.4-.3 1.2-.8 1.7-.8h.1c.3.4 1.2 3.4 1.9 5.6.7 2.4 1.4 4.6 1.8 5.4.6 1.3 2 2.7 3.6 2.7.6 0 1.2-.2 1.7-.5 1.9-1.2 9.1-7.2 10.4-14.4.4-2.3-.1-3.5-.7-4.2z"
                   fill="#FFFFFF"
-                  data-original="#000000"
                   opacity="1"
+                  data-original="#000000"
+                  class=""
                 ></path>
               </g>
             </svg>
           </div>
         )}
-        {item.Platform === 3 && (
+        {item.Platform === 5 && (
           <div className="bg-blue-500 p-2 font-semibold text-white inline-flex items-center space-x-2 rounded-full">
             <svg className="w-5" x="0" y="0" viewBox="0 0 32 32">
               <g>

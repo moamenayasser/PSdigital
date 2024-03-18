@@ -30,7 +30,7 @@ const Footer = ({ footerData, socialData }) => {
             <ContactUsPop />
           </div>
           {socialData?.length !== 0 && (
-            <div className="pt-6 md:pt-0 mb-4 sm:mb-0">
+            <div className="md:pt-0 mb-4 sm:mb-0">
               <div className="flex flex-wrap justify-center gap-2">
                 {socialData?.map((item, index) => (
                   <SocialItem key={index} item={item} />
