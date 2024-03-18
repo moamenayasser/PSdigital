@@ -19,8 +19,7 @@ const Certificates = () => {
           onClick={() => toggleWithImg("/images/cer2.jpg")}
         >
           <img
-            className="rounded-full"
-            width={80}
+            className="rounded-full w-20"
             src="/images/innovation.svg"
             alt="certificate"
           />
