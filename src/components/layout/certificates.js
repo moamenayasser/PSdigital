@@ -18,7 +18,12 @@ const Certificates = () => {
           className="cursor-pointer"
           onClick={() => toggleWithImg("/images/cer2.jpg")}
         >
-          <img width={80} src="/images/cer.png" alt="certificate" />
+          <img
+            className="rounded-full"
+            width={80}
+            src="/images/innovation.svg"
+            alt="certificate"
+          />
         </a>
         <a
           className="cursor-pointer bg-gray-100 rounded-full w-20 h-20 text-center pt-2"

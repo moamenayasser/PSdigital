@@ -93,7 +93,6 @@ const SocialItem = ({ item }) => {
                   fill="#FFFFFF"
                   opacity="1"
                   data-original="#000000"
-                  class=""
                 ></path>
               </g>
             </svg>

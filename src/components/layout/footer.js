@@ -51,7 +51,12 @@ const Footer = ({ footerData, socialData }) => {
               className="cursor-pointer"
               onClick={() => toggleWithImg("/images/cer2.jpg")}
             >
-              <img width={105} src="/images/cer.png" alt="certificate" />
+              <img
+                className="rounded-full"
+                width={95}
+                src="/images/innovation.svg"
+                alt="certificate"
+              />
             </a>
             <a
               className="cursor-pointer bg-white rounded-full w-24 h-24 text-center pt-2"

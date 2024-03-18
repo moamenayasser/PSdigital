@@ -19,6 +19,8 @@ export async function generateMetadata({ params: { locale } }) {
   ]);
 
   return {
+    metadataBase: new URL(process.env.BASE_URL.replace("/API", "")),
+
     title: seoData?.PageTitle,
     description: seoData?.PageDescription,
     keywords: seoData?.PageKeywords,
