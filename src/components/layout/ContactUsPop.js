@@ -1,11 +1,104 @@
 "use client";
 
-import { useState } from "react";
 import Drawer from "../Drawer";
+import { useRef, useState } from "react";
+import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
+// import ReCAPTCHA from "react-google-recaptcha";
 
-const ContactUsPop = () => {
+const ContactUsPop = ({ projectConfig }) => {
   const [openPop, setOpenPop] = useState(false);
   const handleToggle = () => setOpenPop((prev) => !prev);
+
+  // const [captchaData, setCaptchaData] = useState("");
+  // const [captchaError, setCaptchaError] = useState("");
+  // const captchaRef = useRef(null);
+  // const handleCaptchaChange = () => {
+  //   const token = captchaRef.current.getValue();
+  //   if (token) {
+  //     setCaptchaData(token);
+  //   }
+  // };
+
+  const {
+    register,
+    reset,
+    formState: { errors },
+    handleSubmit,
+  } = useForm({
+    defaultValues: {
+      name: "",
+      email: "",
+      phone: "",
+      message: "",
+    },
+  });
+
+  const SubmitContact = async (data) => {
+    const formData = new FormData();
+    formData.append("NameFirst", data.name);
+    formData.append("Email", data.email);
+    formData.append("Phone", data.phone);
+    formData.append("Message", data.message);
+    formData.append("Subject", "Contact Form");
+    // formData.append("Captcha", captchaData);
+
+    try {
+      const res = await fetch(`${location.origin}/api/contact`, {
+        method: "POST",
+        body: formData,
+      });
+      const data = await res.json();
+
+      if (data.hasError) {
+        toast.error(data?.message);
+        // console.log(data?.message);
+        return;
+      } else {
+        // console.log(data.message);
+        toast.success(data.message);
+        setOpenPop(false);
+        // reset();
+      }
+    } catch (error) {
+      console.log(error);
+    } finally {
+      // setCaptchaError("");
+    }
+
+    // if (captchaData) {
+    //   const formData = new FormData();
+    //   formData.append("NameFirst", data.userName);
+    //   formData.append("Email", data.email);
+    //   formData.append("Phone", data.phone);
+    //   formData.append("Message", data.message);
+    //   formData.append("Subject", "Contact Form");
+    //   formData.append("Captcha", captchaData);
+
+    //   try {
+    //     const res = await fetch(`${location.origin}/api/contact`, {
+    //       method: "POST",
+    //       body: formData,
+    //     });
+    //     const data = await res.json();
+
+    //     if (data.hasError) {
+    //       toast.error(data?.message);
+    //       return;
+    //     } else {
+    //       console.log(data.message);
+    //       toast.success(data.message);
+    //       reset();
+    //     }
+    //   } catch (error) {
+    //     console.log(error);
+    //   } finally {
+    //     setCaptchaError("");
+    //   }
+    // } else {
+    //   setCaptchaError("This feild is required");
+    // }
+  };
 
   return (
     <>
@@ -62,32 +155,92 @@ const ContactUsPop = () => {
               <h3 className="text-[#001d35] text-2xl font-bold w-full text-center">
                 Contact Us
               </h3>
-              <input
-                type="text"
-                className="py-3 px-4 block w-full border-gray-400 text-[#001d35] rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
-                placeholder="Name"
-              />
-              <input
-                type="text"
-                className="py-3 px-4 block w-full border-gray-400 text-[#001d35] rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
-                placeholder="Email"
-              />
-              <input
-                type="text"
-                className="py-3 px-4 block w-full border-gray-400 text-[#001d35] rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
-                placeholder="Phone Number"
-              />
-              <textarea
-                type="text"
-                className="py-3 px-4 block w-full border-gray-400 text-[#001d35] rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
-                placeholder="Message"
-              />
-              <button
-                className="bg-[#001d35] text-white w-48 m-auto mt-4 font-bold rounded-full p-3 px-7 text-base mb-6 border-[#001d35] border-2 transition-all hover:bg-transparent hover:text-[#001d35]"
-                onClick={handleToggle}
-              >
-                Submit
-              </button>
+              <form onSubmit={handleSubmit(SubmitContact)}>
+                <div className="mb-2">
+                  <input
+                    type="text"
+                    className="py-3 px-4 block w-full border-gray-400 text-[#001d35] rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                    placeholder="Name"
+                    {...register("name", {
+                      required: {
+                        value: true,
+                        message: "Please enter your name",
+                      },
+                    })}
+                  />
+                  {errors.name && (
+                    <span className="text-red-500">{errors.name.message}</span>
+                  )}
+                </div>
+                <div className="mb-2">
+                  <input
+                    type="text"
+                    className="py-3 px-4 block w-full border-gray-400 text-[#001d35] rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                    placeholder="Email"
+                    {...register("email", {
+                      required: {
+                        value: true,
+                        message: "Please enter your email",
+                      },
+                      pattern: {
+                        value: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
+                        message: "The email is invalid",
+                      },
+                    })}
+                  />
+                  {errors.email && (
+                    <span className="text-red-500">{errors.email.message}</span>
+                  )}
+                </div>
+                <div className="mb-2">
+                  <input
+                    type="text"
+                    className="py-3 px-4 block w-full border-gray-400 text-[#001d35] rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                    placeholder="Phone Number"
+                    {...register("phone", {
+                      required: {
+                        value: true,
+                        message: "Please enter your phone",
+                      },
+                      pattern: {
+                        value: /^[0-9]+$/,
+                        message: "The phone is invalid",
+                      },
+                    })}
+                  />
+                  {errors.phone && (
+                    <span className="text-red-500">{errors.phone.message}</span>
+                  )}
+                </div>
+                <div className="mb-2">
+                  <textarea
+                    type="text"
+                    className="py-3 px-4 block w-full border-gray-400 text-[#001d35] rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                    placeholder="Message"
+                    {...register("message")}
+                  />
+                </div>
+                {/* {projectConfig.CaptchaClientKey && (
+                  <div className="mb-6">
+                    <ReCAPTCHA
+                      sitekey={projectConfig?.CaptchaClientKey}
+                      stoken={projectConfig?.CaptchaSecretKey}
+                      ref={captchaRef}
+                      onChange={handleCaptchaChange}
+                    />
+                    {captchaError && (
+                      <span className="text-red-500">{captchaError}</span>
+                    )}
+                  </div>
+                )} */}
+                <button
+                  className="bg-[#001d35] text-white w-48 m-auto mt-4 font-bold rounded-full p-3 px-7 text-base mb-6 border-[#001d35] border-2 transition-all hover:bg-transparent hover:text-[#001d35]"
+                  // onClick={handleToggle}
+                  type="submit"
+                >
+                  Submit
+                </button>
+              </form>
             </div>
           </div>
         </div>

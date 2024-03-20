@@ -1,5 +1,7 @@
 "use client";
 // import AnimatedCursor from "./AnimatedCursor";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Footer from "@/components/layout/footer";
 
 const ClientLayout = (props) => {
@@ -12,6 +14,7 @@ const ClientLayout = (props) => {
         <main className="flex flex-col flex-grow w-full">{children}</main>
       </div>
       <Footer footerData={footerData} socialData={socialData} />
+      <ToastContainer />
     </>
   );
 };

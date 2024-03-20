@@ -3,7 +3,8 @@ import { useState } from "react";
 import Drawer from "../Drawer";
 import Image from "next/image";
 import ContactUsPop from "./ContactUsPop";
-const Footer = ({ footerData, socialData }) => {
+// import fetchData from "@/utils/fetchData";
+const Footer = async ({ footerData, socialData }) => {
   const [openNav, setOpenNav] = useState(false);
   const [drawerImg, setDrawerImg] = useState("");
   const handleToggle = () => setOpenNav((prev) => !prev);
@@ -12,7 +13,10 @@ const Footer = ({ footerData, socialData }) => {
     setDrawerImg(imgSrc);
     handleToggle();
   };
-  console.log(socialData);
+
+  // const projectConfig = await fetchData(
+  //   `${process.env.BASE_URL}/${process.env.PROJECT_CODE}/ProjectConfiguration`
+  // );
   return (
     <div
       id="contact"
