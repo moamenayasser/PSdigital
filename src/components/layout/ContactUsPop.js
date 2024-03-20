@@ -169,7 +169,9 @@ const ContactUsPop = ({ projectConfig }) => {
                     })}
                   />
                   {errors.name && (
-                    <span className="text-red-500">{errors.name.message}</span>
+                    <span className="text-red-500 text-sm pl-1">
+                      {errors.name.message}
+                    </span>
                   )}
                 </div>
                 <div className="mb-2">
@@ -189,7 +191,9 @@ const ContactUsPop = ({ projectConfig }) => {
                     })}
                   />
                   {errors.email && (
-                    <span className="text-red-500">{errors.email.message}</span>
+                    <span className="text-red-500 text-sm pl-1">
+                      {errors.email.message}
+                    </span>
                   )}
                 </div>
                 <div className="mb-2">
@@ -209,7 +213,9 @@ const ContactUsPop = ({ projectConfig }) => {
                     })}
                   />
                   {errors.phone && (
-                    <span className="text-red-500">{errors.phone.message}</span>
+                    <span className="text-red-500 text-sm pl-1">
+                      {errors.phone.message}
+                    </span>
                   )}
                 </div>
                 <div className="mb-2">
