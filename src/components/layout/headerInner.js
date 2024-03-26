@@ -9,7 +9,7 @@ const HeaderInner = () => {
   const handleToggle = () => setOpenNav((prev) => !prev);
   return (
     <nav
-      className="flex items-center justify-between p-1 md:p-6 lg:px-8"
+      className="flex items-center justify-between p-1 md:p-2 lg:px-8 sticky top-0 bg-white z-20"
       aria-label="Global"
     >
       <div className="flex lg:flex-1">
