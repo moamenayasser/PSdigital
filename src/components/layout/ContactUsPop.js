@@ -239,13 +239,15 @@ const ContactUsPop = ({ projectConfig }) => {
                     )}
                   </div>
                 )} */}
-                <button
-                  className="bg-[#001d35] text-white w-48 m-auto mt-4 font-bold rounded-full p-3 px-7 text-base mb-6 border-[#001d35] border-2 transition-all hover:bg-transparent hover:text-[#001d35]"
-                  // onClick={handleToggle}
-                  type="submit"
-                >
-                  Submit
-                </button>
+                <div className="mb-2 text-center">
+                  <button
+                    className="bg-[#001d35] text-white w-48 m-auto mt-4 font-bold rounded-full p-3 px-7 text-base mb-6 border-[#001d35] border-2 transition-all hover:bg-transparent hover:text-[#001d35]"
+                    // onClick={handleToggle}
+                    type="submit"
+                  >
+                    Submit
+                  </button>
+                </div>
               </form>
             </div>
           </div>
