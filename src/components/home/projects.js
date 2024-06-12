@@ -22,10 +22,8 @@ const Projects = ({ data }) => {
                 <h3 className="text-3xl text-center font-semibold text-gray-800 dark:text-gray-300 dark:group-hover:text-white capitalize">
                   {item?.Name}
                 </h3>
-                <p className="mt-4 mb-4 text-gray-600 dark:text-gray-300">
-                  {" "}
-                  short description for brand short and description for brand
-                  description
+                <p className="mt-4 mb-4 text-gray-600 dark:text-gray-300 line-clamp-2">
+                  {item?.DescriptionShort}
                 </p>
                 <p className="text-[#fba01c] flex gap-1 group-hover:text-[#001d35] group transition justify-center dark:text-white">
                   Read more{" "}
