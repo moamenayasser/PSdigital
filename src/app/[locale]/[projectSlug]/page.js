@@ -46,24 +46,26 @@ const InnerProject = async ({ params: { locale, projectSlug } }) => {
   );
 
   const projectIntro = innerProjectData?.find(
-    (item) => item.PageTitle === "projectIntro"
+    (item) => item.PageTitle?.trim() === "projectIntro"
   );
   const projectObjective = innerProjectData?.find(
-    (item) => item.PageTitle === "Objective"
+    (item) => item.PageTitle?.trim() === "Objective"
   );
   const projectSolution = innerProjectData?.find(
-    (item) => item.PageTitle === "Solution"
+    (item) => item.PageTitle?.trim() === "Solution"
   );
   const projectResults = innerProjectData?.find(
-    (item) => item.PageTitle === "Results"
+    (item) => item.PageTitle?.trim() === "Results"
   );
   const projectConclusion = innerProjectData?.find(
-    (item) => item.PageTitle === "Conclusion"
+    (item) => item.PageTitle?.trim() === "Conclusion"
   );
+
+  console.log(innerProjectData);
   return (
     <>
       <HeaderInner />
-      <section className="">
+      <section>
         {projectIntro && <ProjectIntro data={projectIntro} />}
 
         <div className="flex justify-center max-[900px]:flex-col-reverse gap-10">

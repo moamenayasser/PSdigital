@@ -22,21 +22,22 @@ const ProjectIntro = ({ data }) => {
               className="flex gap-10 sm:pt-10 whitespace-nowrap w-full sm:w-[50%] mb-2"
               dangerouslySetInnerHTML={{ __html: data.DescriptionLong }}
             />
-
-            <motion.div
-              className="w-full sm:w-[50%] z-10"
-              initial={{ opacity: 0, y: 80 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1 }}
-            >
-              <Image
-                width={500}
-                height={350}
-                src={data?.ImageUrl}
-                alt={data?.Name}
-                className="rounded-[20px] object-cover w-full h-[350px]"
-              />
-            </motion.div>
+            {data?.ImageUrl && (
+              <motion.div
+                className="w-full sm:w-[50%] z-10"
+                initial={{ opacity: 0, y: 80 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1 }}
+              >
+                <Image
+                  width={500}
+                  height={350}
+                  src={data?.ImageUrl}
+                  alt={data?.Name}
+                  className="rounded-[20px] object-cover w-full h-[350px]"
+                />
+              </motion.div>
+            )}
           </div>
         </div>
       </div>
