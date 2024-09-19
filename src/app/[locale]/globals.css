@@ -5620,3 +5620,12 @@ img {
     }
   }
 }
+
+.sm\:w-3\/4.w-full ul,
+.sm\:w-3\/4.w-full ul li {
+  list-style-type: circle !important;
+  list-style: auto;
+}
+.sm\:w-3\/4.w-full ul {
+  padding-left: 30px;
+}
